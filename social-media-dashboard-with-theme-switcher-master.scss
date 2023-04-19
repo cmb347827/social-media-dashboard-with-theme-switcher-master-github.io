@@ -1,0 +1,397 @@
+//beautified at https://codebeautify.org/scss-beautifier on 4-19-2023 
+
+@import "custom.scss";
+
+$container__form-xs: 375;
+$container__form-xxl: 1440;
+
+$container__form-xxl-min: 1439;
+$font_size: 16px;
+$font_weight-normal: 400;
+$font_weight-Bold: 700;
+
+$colors: (
+  White: hsl(192, 15%, 99%),
+  Lime Green: hsl(163, 72%, 41%),
+  Bright Red: hsl(356, 69%, 56%),
+  Facebook: hsl(208, 92%, 53%),
+  Twitter: hsl(203, 89%, 53%),
+  YouTube: hsl(348, 97%, 39%),
+);
+$darkColors: (
+  Very Dark Blue: hsl(230, 17%, 14%),
+  Very Dark Blue Top: hsl(232, 19%, 15%),
+  Dark Desaturated Blue: hsl(228, 28%, 20%),
+  Desaturated Blue: hsl(228, 34%, 66%),
+  White: hsl(0, 0%, 100%)
+);
+$lightColors: (
+  White: hsl(0, 0%, 100%),
+  Very Pale Blue Top: hsl(225, 100%, 98%),
+  Light Grayish Blue: hsl(227, 47%, 96%),
+  Dark Grayish Blue: hsl(228, 12%, 44%),
+  Very Dark Blue: hsl(230, 17%, 14%),
+  Toggle Light: hsl(230, 22%, 74%),
+);
+$fallback-colors: (Snow Chartreuse Crimson Blue CornflowerBlue Red);
+$light-fallback-colors: (
+  White PowderBlue LightSteelBlue CadetBlue DarkBlue Lavender
+);
+$dark-fallback-colors: (DarkSlateBlue MidnightBlue Navy RoyalBlue White);
+
+@mixin font-color($color, $fallback-color) {
+  color: $fallback-color;
+  color: $color;
+}
+
+@mixin bg-color($color, $fallback-color) {
+  background-color: $fallback-color;
+  background-color: $color;
+}
+
+@mixin width($grid-size) {
+  width: $grid-size * 1px;
+}
+@mixin max-width($grid-size) {
+  max-width: $grid-size * 1px;
+}
+@mixin min-width($grid-size) {
+  min-width: $grid-size * 1px;
+}
+@mixin border-radius($radius...) {
+  border-radius: $radius;
+}
+@mixin margin($args...) {
+  margin: $args;
+}
+@mixin padding($args...) {
+  padding: $args;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  font-family: "Inter", sans-serif;
+  font-weight: $font_weight-normal;
+}
+
+/*the up/down arrows in front of change in number*/
+.caret {
+  width: 0;
+  height: 0;
+  display: inline-block;
+  border: 10px solid transparent;
+}
+.caret-down {
+  @extend .caret;
+  margin-top: 8px;
+  border-top-color: map-get($colors, Bright Red);
+}
+.caret-up {
+  @extend .caret;
+  margin-bottom: 12px;
+  border-bottom-color: map-get($colors, Lime Green);
+}
+
+main {
+  overflow: auto;
+  width: 100%;
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+
+  /* the dark theme to be added/removed in JS */
+  .dark {
+    div,
+    h1,
+    fieldset label {
+      @include font-color(
+        map-get($darkColors, White),
+        nth($dark-fallback-colors, 5)
+      );
+    }
+    .blue-font {
+      @include font-color(
+        map-get($darkColors, Desaturated Blue),
+        nth($dark-fallback-colors, 4)
+      );
+    }
+
+    /*the slightly different colored background top area */
+    &:before {
+      content: "";
+      position: absolute;
+      height: 300px;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      @include bg-color(
+        map-get($darkColors, Very Dark Blue Top),
+        nth($dark-fallback-colors, 2)
+      );
+      z-index: -1;
+    }
+    /*the slightly different colored background bottom area */
+    &:after {
+      content: "";
+      position: absolute;
+      height: 61vh;
+      //299px instead of 300px , otherwise there is a 1px high visible line accross.
+      top: 299px;
+      left: 0;
+      width: 100vw;
+      z-index: -99;
+      @include bg-color(
+        map-get($darkColors, Very Dark Blue),
+        nth($dark-fallback-colors, 1)
+      );
+    }
+    .card {
+      @include bg-color(
+        map-get($darkColors, Dark Desaturated Blue),
+        nth($dark-fallback-colors, 3)
+      );
+      &:hover {
+        @include bg-color(
+          lighten(map-get($darkColors, Dark Desaturated Blue), 3),
+          nth($dark-fallback-colors, 3)
+        );
+      }
+    }
+    & > * {
+      z-index: 100;
+    }
+    //toggle button wrapper dark theme gradient colors.
+    .toggle__wrapper {
+      background-image: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    }
+    //toggle button toggle button itself dark theme color
+    .toggle__switcher {
+      @include bg-color(
+        map-get($darkColors, Very Dark Blue),
+        nth($dark-fallback-colors, 1)
+      );
+    }
+  }
+
+  /* the light theme to be added/removed in JS */
+  .light {
+    div,
+    fieldset label {
+      @include font-color(
+        map-get($lightColors, Dark Grayish Blue),
+        nth($light-fallback-colors, 4)
+      );
+    }
+    .dark-font {
+      @include font-color(
+        map-get($darkColors, Very Dark Blue),
+        nth($dark-fallback-colors, 1)
+      );
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      height: 300px;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      @include bg-color(
+        map-get($lightColors, Very Pale Blue Top),
+        nth($light-fallback-colors, 2)
+      );
+      z-index: -1;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      height: 60vh;
+      top: 300px;
+      left: 0;
+      width: 100vw;
+      @include bg-color(
+        map-get($lightColors, White),
+        nth($light-fallback-colors, 1)
+      );
+      z-index: -1;
+    }
+    & > * {
+      z-index: 100;
+    }
+
+    .card {
+      @include bg-color(
+        map-get($lightColors, Light Grayish Blue),
+        nth($light-fallback-colors, 3)
+      );
+      &:hover {
+        @include bg-color(
+          darken(map-get($lightColors, Light Grayish Blue), 2),
+          nth($light-fallback-colors, 3)
+        );
+      }
+    }
+    .toggle__wrapper {
+      @include bg-color(
+        map-get($lightColors, Toggle Light),
+        nth($light-fallback-colors, 6)
+      );
+    }
+    .toggle__switcher {
+      @include bg-color(
+        map-get($lightColors, White),
+        nth($light-fallback-colors, 1)
+      );
+    }
+  }
+  .container {
+    overflow: auto;
+    div {
+      overflow: auto;
+    }
+
+    .bold {
+      font-weight: $font_weight-Bold;
+      font-size: 48px;
+      line-height: 72px;
+    }
+    .font-size-36px {
+      font-size: 36px;
+    }
+    .line-height {
+      line-height: 36px;
+    }
+
+    .fa-square-facebook {
+      @include font-color(map-get($colors, Facebook), nth($fallback-colors, 4));
+    }
+    .fa-twitter {
+      @include font-color(map-get($colors, Twitter), nth($fallback-colors, 5));
+    }
+    .fa-instagram {
+      font-weight: $font_weight-Bold;
+      background: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+    }
+    .fa-youtube {
+      @include font-color(map-get($colors, YouTube), nth($fallback-colors, 6));
+    }
+    //the first div with class .card first of it , to add the border-top color
+    div:first-of-type .card:nth-of-type(1) {
+      border: 5px solid transparent;
+      border-top-color: map-get($colors, Facebook);
+    }
+    //the first div with class .card second of it , to add the border-top color.
+    div:first-of-type .card:nth-of-type(2) {
+      border: 5px solid transparent;
+      border-top-color: map-get($colors, Twitter);
+    }
+    .top-border-gradient {
+      display: inline-block;
+      width: inherit;
+      height: 5px;
+      position: relative;
+      top: -15px;
+      background: linear-gradient(
+        to left,
+        hsl(37, 97%, 70%),
+        hsl(329, 70%, 58%)
+      );
+    }
+    div:first-of-type .card:nth-of-type(4) {
+      border: 5px solid transparent;
+      border-top-color: map-get($colors, YouTube);
+    }
+    //the slider button code.
+    fieldset {
+      height: 15px;
+      border: none;
+
+      input[type="radio"] {
+        //the radio buttons within the toggle button
+        display: inline-flex;
+        width: 40px;
+        height: 30px;
+        //hide the radio buttons to make it look like a slider.
+        opacity: 0;
+      }
+      .toggle__wrapper {
+        //the toggle button itself
+        width: 60px;
+        height: 30px;
+        vertical-align: middle;
+        border-radius: 15px;
+        // create positioning context for toggle_switcher
+        position: relative;
+      }
+      .toggle__switcher {
+        // the toggled ball
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+
+      #dark:checked ~ .toggle__switcher {
+        right: 0;
+        left: 50%;
+      }
+      #light:checked ~ .toggle__switcher {
+        left: 0;
+      }
+    }
+    .card > span {
+      /*@include padding(20px);*/
+    }
+    .card {
+      min-height: 300px;
+      @include border-radius(13px);
+    }
+
+    @media screen and (max-width: $container__form-xxl-min * 1px) {
+      .card {
+        @include padding(12px);
+        @include margin(25px 0);
+      }
+      header div {
+        border-bottom: 1px solid grey;
+      }
+      .toggle__wrapper {
+        @include margin(0 -150px 0 0);
+      }
+      @include width($container__form-xs);
+    }
+
+    @media screen and (min-width: $container__form-xxl * 1px) {
+      .card {
+        @include margin(25px);
+      }
+
+      @include padding(80px);
+      @include width($container__form-xxl);
+    }
+  }
+}
+
+footer {
+  z-index: 99;
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}

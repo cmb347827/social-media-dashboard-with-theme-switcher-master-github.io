@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="https://i.postimg.cc/yxgKFKLM/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-utilities.min.css" integrity="sha512-DEGBrwaCF4lkKzMKNwt8Qe/V54bmJctk7I1HyfINGAIugDvsdBeuWzAWZmXAmm49P6EBfl/OeUM01U3r7cW4jg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  
+  <link rel='stylesheet' href='social-media-dashboard-with-theme-switcher-master.css' type='text/css'>
+  <title>Frontend Mentor | Social Media Dashboard with Theme Switcher Master</title>
+  
+  
+</head>
+<body>
+     
+      <main>
+		  <div class='container light'>
+		      <header class='mb-xxl-5 row d-flex flex-column justify-content-xxl-between flex-xxl-row align-items-stretch'> 
+			      <div class='col-xxl-6 col d-flex flex-column text-start'>
+                      <h1>Social Media Dashboard</h1>
+                      <span class='fw-semibold blue-font'>Total Followers: 23,004</span>
+                  </div>
+				  <fieldset class='mt-4 col-xxl-2 justify-content-between col d-flex' aria-label="color theme switcher" role="radiogroup">
+                      <label for="dark">Dark Mode</label>
+                      <span class="align-items-end d-flex toggle__wrapper">
+                          <input type="radio" name="theme" id="light" checked>
+                          <input type="radio" name="theme" id="dark">
+                          <span aria-hidden="true" class="toggle__switcher"></span>
+                      </span>
+                      <label for="light"></label>
+                  </fieldset>
+                  
+              </header>
+              <div class='mt-5 row d-flex flex-xxl-row flex-column'>
+                  <div class='card col d-flex flex-column align-items-center justify-content-center'>
+				     <div class='d-flex flex-row align-items-center'>
+				         <i class="pe-5 fa-brands fa-square-facebook"></i>
+		                 <span class='fw-semibold blue-font'>@nathanf</span>
+				     </div>
+                     <span class='bold pb-4 pt-4'>1987</span>
+                     <span class='blue-font text-uppercase pt-3'>Followers</span>
+					 <div class='pt-5 d-flex flex-row'>
+                         <span class='fw-semibold mt-1 ps-2 up'>12 Today</span>
+					 </div>
+                  </div>
+				  <div class='card col d-flex flex-column align-items-center justify-content-center'>
+				     <div class='d-flex flex-row align-items-center'>
+				         <i class="pe-5 fa-brands fa-twitter"></i>
+                         <span class='fw-semibold blue-font'>@nathanf</span>
+				     </div>
+                     <span class='bold pb-4 pt-4'> 1044</span>
+                     <span class='blue-font text-uppercase pt-3'> Followers</span>
+					 <div class='pt-5 d-flex flex-row'>
+                         <span class='fw-semibold mt-1 ps-2 up'> 99 Today</span>
+					 </div>
+                  </div>
+				  <div class='card col d-flex flex-column align-items-center justify-content-center'>
+				     <div class='top-border-gradient'></div>
+				     <div class='d-flex flex-row align-items-center'>
+				        <i class="pe-5 fa-brands fa-instagram"></i>
+                        <span class='fw-semibold blue-font'>@realnathanf</span>
+					 </div>
+                     <span class='bold pb-4 pt-4'> 11k </span>
+                     <span class='blue-font text-uppercase pt-3'> Followers</span>
+					 <div class='pt-5 d-flex flex-row'>
+                         <span class='fw-semibold mt-1 ps-2 up'>1099 Today</span>
+				     </div>
+                  </div>
+				  <div class='card col d-flex flex-column align-items-center justify-content-center'>
+				     <div class='d-flex flex-row align-items-center'>
+				        <i class="pe-5 fa-brands fa-youtube"></i>
+                        <span class='fw-semibold blue-font'> Nathan F.</span>
+				     </div>
+                     <span class='bold pb-4 pt-4'> 8239 </span>
+                     <span class='blue-font text-uppercase pt-3'> Subscribers </span>
+					 <div class='pt-5 d-flex flex-row'>
+                         <span class='fw-semibold ps-2 down'> 144 Today </span>
+					 </div>
+				  </div>
+             </div>
+			 <h1 class='mt-xxl-3 mb-xxl-3 col d-flex flex-column flex-xxl-row'>Overview - Today</h1>
+            <div class='row d-flex flex-column flex-xxl-row'>
+                    <div class='pb-xxl-2 card col d-flex flex-column align-items-center justify-content-around'>
+					    <div class='d-flex flex-row'>
+					       <i class="me-3 order-last fa-brands fa-square-facebook"></i>
+                           <span class='fw-semibold blue-font me-5 order-first'>Page Views</span>
+						</div>
+						<div class='d-flex flex-row align-items-end'>
+                           <span class='fw-bolder font-size-36px dark-font me-5'> 87</span>
+                           <span class='fw-semibold line-height up '> 3%</span>
+						</div>
+                    </div>
+					<div class='pb-xxl-2 card col d-flex flex-column align-items-center justify-content-around'>
+					    <div class='d-flex flex-row'>
+					        <i class="order-last fa-brands fa-square-facebook"></i>
+                            <span class='fw-semibold blue-font me-5 order-first'>Likes</span>
+					    </div>
+						<div class='d-flex flex-row align-items-end'>
+                            <span class='fw-bolder font-size-36px dark-font me-5'>52</span>
+                            <span class='fw-semibold line-height down'>2%</span>
+						</div>
+                    </div>
+					<div class='pb-xxl-2 card col d-flex flex-column align-items-center justify-content-around'>
+					    <div class='d-flex flex-row'>
+					       <i class="order-last fa-brands fa-instagram"></i>
+                           <span class='fw-semibold blue-font me-5 order-first'>Likes</span>
+						</div>
+						<div class='d-flex flex-row align-items-end'>
+                           <span class='fw-bolder font-size-36px dark-font me-5'>5462</span>
+                           <span class='fw-semibold line-height up'>2257%</span>
+						</div>
+                    </div>
+					 <div class='pb-xxl-2 card col d-flex flex-column align-items-center justify-content-around'>
+					    <div class='d-flex flex-row'>
+					       <i class="order-last fa-brands fa-instagram"></i>
+                           <span class='fw-semibold blue-font me-5 order-first'>Profile Views</span>
+						</div>
+						<div class='d-flex flex-row align-items-end'>
+                           <span class='fw-bolder font-size-36px dark-font me-5'>52k</span>
+                           <span class='fw-semibold line-height up'>1375%</span>
+						</div>
+                     </div>
+					 <div class='w-100'></div>
+					 <div class='card col d-flex flex-column align-items-center justify-content-around'>
+					    <div class='d-flex flex-row'>
+					        <i class="order-last fa-brands fa-twitter"></i>
+                           <span class='fw-semibold blue-font me-5 order-first'>Retweets</span>
+						</div>
+						<div class='d-flex flex-row align-items-end'>
+                           <span class='fw-bolder font-size-36px dark-font me-5'>117</span>
+                           <span class='fw-semibold line-height up'>303%</span>
+						</div>
+                     </div>
+					 <div class='card col d-flex flex-column align-items-center justify-content-around'>
+					   <div class='d-flex flex-row'>
+					        <i class="order-last fa-brands fa-twitter"></i>
+                           <span class='fw-semibold blue-font me-5 order-first'>Likes</span>
+					   </div>
+					   <div class='d-flex flex-row align-items-end'>
+                           <span class='fw-bolder font-size-36px dark-font me-5'>507</span>
+                           <span class='fw-semibold line-height up'>553%</span>
+					   </div>
+                     </div>
+					 <div class='card col d-flex flex-column align-items-center justify-content-around'>
+					   <div class='d-flex flex-row'>
+					       <i class="order-last fa-brands fa-youtube"></i>
+                           <span class='fw-semibold blue-font me-5 order-first'>Likes</span>
+					   </div>
+					   <div class='d-flex flex-row align-items-end'>
+                           <span class='fw-bolder font-size-36px dark-font me-5'>107</span>
+                           <span class='fw-semibold line-height down'>19%</span>
+					   </div>
+                     </div>
+					 <div class='card col d-flex flex-column align-items-center justify-content-around'>
+					   <div class='d-flex flex-row'>
+					       <i class="order-last fa-brands fa-youtube"></i>
+                           <span class='fw-semibold blue-font me-5 order-first'>Total Views</span>
+					   </div>
+					   <div class='d-flex flex-row align-items-end'>
+                           <span class='fw-bolder font-size-36px dark-font me-5'>1407</span>
+                           <span class='fw-semibold line-height down'>12%</span>
+					   </div>
+					 </div>
+                
+             </div>
+		  </div>
+      </main>
+      <footer>
+	       <div class="attribution mt-5">
+                <span class='me-2'>Challenge by</span><a class='me-2' href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a> 
+                <span class='me-2'>Coded by</span><a href="https://www.frontendmentor.io/profile/cmb347827">CMB</a>
+           </div>
+	  </footer>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.js" integrity="sha512-nO7wgHUoWPYGCNriyGzcFwPSF+bPDOR+NvtOYy2wMcWkrnCNPKBcFEkU80XIN14UVja0Gdnff9EmydyLlOL7mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src='social-media-dashboard-with-theme-switcher-master.js'></script>
+	  <!--html validated at https://validator.nu/#textarea on 4-19-2023 -->
+</body>
+</html>
